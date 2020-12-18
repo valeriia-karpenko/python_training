@@ -1,9 +1,6 @@
-from test.test_add_group import app
-
-
 class GroupHelper:
 
-    def __init__(self):
+    def __init__(self, app):
         self.app = app
 
     def return_to_groups_page(self):
