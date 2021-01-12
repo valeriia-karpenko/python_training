@@ -11,7 +11,6 @@ def test_modify_contact(app):
     assert len(old_contacts) == len(new_contacts)
 
 
-
 def test_modify_empty_contact(app):
     if app.contact.count() == 0:
         app.contact.create(Contact(firstname="Svetlana", lastname="Ivanova"))
