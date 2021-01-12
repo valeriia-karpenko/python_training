@@ -1,5 +1,7 @@
 import time
 
+from model.contact import Contact
+
 
 class ContactHelper:
 
@@ -59,9 +61,20 @@ class ContactHelper:
     def return_home_page(self):
         wd = self.app.wd
         # return to home page
-        wd.find_element_by_link_text("home page").click()
+        wd.find_element_by_link_text("home").click()
 
     def count(self):
         wd = self.app.wd
         self.app.open_home_page()
         return len(wd.find_elements_by_link_text("selected[]"))
+
+    def get_contact_list(self):
+        wd = self.app.wd
+        self.return_home_page()
+        contacts = []
+        for element in wd.find_elements_by_name("entry"):
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            last_name = element.find_elements_by_tag_name("td")[1].text
+            first_name = element.find_elements_by_tag_name("td")[2].text
+            contacts.append(Contact(id=id, firstname=first_name, lastname=last_name))
+        return contacts
