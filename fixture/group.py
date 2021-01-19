@@ -61,7 +61,7 @@ class GroupHelper:
         self.open_groups_page()
         # select first group
         self.select_group_by_index(index)
-        wd.find_element_by_xpath("(//input[@name='edit'])[2]").click()
+        wd.find_element_by_xpath('input[@name="edit"])[2]').click()
         # fill group form
         self.fill_group_form(new_group_data)
         # submit changing group
