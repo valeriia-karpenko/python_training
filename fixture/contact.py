@@ -24,7 +24,14 @@ class ContactHelper:
         wd = self.app.wd
         self.change_field_value("firstname", contact.firstname)
         self.change_field_value("lastname", contact.lastname)
-        self.change_field_value("homephone", contact.homephone)
+        self.change_field_value("home", contact.homephone)
+        # self.change_field_value("mobile", contact.mobilephone)
+        # self.change_field_value("work", contact.workphone)
+        # self.change_field_value("phone2", contact.secondaryphone)
+        # self.change_field_value("address", contact.address)
+        self.change_field_value("email", contact.email)
+        # self.change_field_value("email2", contact.email2)
+        # self.change_field_value("email3", contact.email2)
 
     def create(self, contact):
         wd = self.app.wd
