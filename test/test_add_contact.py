@@ -8,23 +8,9 @@ from model.contact import Contact
 
 
 def random_string(prefix, maxlen):
-    symbols = string.ascii_letters + string.digits + " " * 10
+    symbols = string.ascii_letters + string.digits
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
-
-# testdata = [
-#     Contact(firstname=firstname, lastname=lastname, homephone=homephone, email=email)
-#     for firstname in ["", random_string("firstname", 20)]
-#     for lastname in ["", random_string("lastname", 10)]
-#     for homephone in ["", random_string("homephone", 10)]
-#     for email in ["", random_string("email", 20)]
-#     # for mobilephone in ["", random_string("mobilephone", 3)]
-#     # for workphone in ["", random_string("workphone", 2)]
-#     # for secondaryphone in ["", random_string("secondaryphone", 2)]
-#     # for address in ["", random_string("address", 3)]
-#     # for email2 in ["", random_string("email2", 3)]
-#     # for email3 in ["", random_string("email3", 2)]
-# ]
 
 testdata = [Contact(firstname="", lastname="", homephone="", email="", mobilephone="", workphone="", secondaryphone="",
                     address="", email2="", email3="")] + [
