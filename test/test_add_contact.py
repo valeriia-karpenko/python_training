@@ -26,19 +26,15 @@ def random_string(prefix, maxlen):
 #     # for email3 in ["", random_string("email3", 2)]
 # ]
 
-testdata = [Contact(firstname="", lastname="", homephone="", email=""
-                    # , mobilephone="", workphone="", secondaryphone="",
-                    # address="", email2="", email3=""
-                    )] + [
+testdata = [Contact(firstname="", lastname="", homephone="", email="", mobilephone="", workphone="", secondaryphone="",
+                    address="", email2="", email3="")] + [
                Contact(firstname=random_string("firstname", 20), lastname=random_string("lastname", 10),
-                       homephone=random_string("homephone", 10), email=random_string("email", 20)
-                       # ,
-                       # mobilephone=random_string("mobilephone", 3), workphone=random_string("workphone", 2),
-                       # secondaryphone=random_string("secondaryphone", 2), address=random_string("address", 3),
-                       # email2=random_string("email2", 3), email3=random_string("email3", 2)
-                       )
+                       homephone=random_string("homephone", 10), email=random_string("email", 20),
+                       mobilephone=random_string("mobilephone", 3), workphone=random_string("workphone", 2),
+                       secondaryphone=random_string("secondaryphone", 2), address=random_string("address", 3),
+                       email2=random_string("email2", 3), email3=random_string("email3", 2))
                for i in range(5)
-           ]
+]
 
 
 @pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
