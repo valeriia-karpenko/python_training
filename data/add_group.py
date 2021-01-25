@@ -1,7 +1,7 @@
+# -*- coding: utf-8 -*-
 import random
 import string
 from model.group import Group
-from 
 
 constant = [
     Group(name="name1", header="header1", footer="footer1"),

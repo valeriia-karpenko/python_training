@@ -3,13 +3,12 @@ import random
 import string
 import pytest
 from model.group import Group
-
+from data.add_group import constant as testdata
 
 
 def random_string(prefix, maxlen):
-    symbols = string.ascii_letters + string.digits + " "*10
+    symbols = string.ascii_letters + string.digits + " " * 10
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
-
 
 
 @pytest.mark.parametrize("group", testdata, ids=[repr(x) for x in testdata])
