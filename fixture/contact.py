@@ -25,13 +25,13 @@ class ContactHelper:
         self.change_field_value("firstname", contact.firstname)
         self.change_field_value("lastname", contact.lastname)
         self.change_field_value("home", contact.homephone)
-        # self.change_field_value("mobile", contact.mobilephone)
-        # self.change_field_value("work", contact.workphone)
-        # self.change_field_value("phone2", contact.secondaryphone)
-        # self.change_field_value("address", contact.address)
+        self.change_field_value("mobile", contact.mobilephone)
+        self.change_field_value("work", contact.workphone)
+        self.change_field_value("phone2", contact.secondaryphone)
+        self.change_field_value("address", contact.address)
         self.change_field_value("email", contact.email)
-        # self.change_field_value("email2", contact.email2)
-        # self.change_field_value("email3", contact.email2)
+        self.change_field_value("email2", contact.email2)
+        self.change_field_value("email3", contact.email2)
 
     def create(self, contact):
         wd = self.app.wd
@@ -52,7 +52,17 @@ class ContactHelper:
         wd = self.app.wd
         self.app.open_home_page()
         # select group
-        wd.find_elements_by_name("selected[]")[index].click()
+        self.select_contact_by_index(index)
+        # submit deletion
+        wd.find_element_by_xpath('//input[@value="Delete"]').click()
+        wd.switch_to_alert().accept()
+        time.sleep(3)
+        self.contact_cache = None
+
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_id(id)
         # submit deletion
         wd.find_element_by_xpath('//input[@value="Delete"]').click()
         wd.switch_to_alert().accept()
@@ -69,6 +79,16 @@ class ContactHelper:
         self.return_home_page()
         self.contact_cache = None
 
+    def modify_contact_by_id(self, id, contact):
+        wd = self.app.wd
+        self.open_contact_to_edit_by_id(id)
+        # change contact data
+        self.fill_contact_form(contact)
+        # submit changing contact
+        wd.find_element_by_name("update").click()
+        self.return_home_page()
+        self.contact_cache = None
+
     def select_contact_by_index(self, index):
         wd = self.app.wd
         self.return_home_page()
@@ -76,12 +96,21 @@ class ContactHelper:
         element = element_row.find_elements_by_tag_name("td")[6]
         element.find_element_by_tag_name("a").click()
 
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
     def open_contact_to_edit_by_index(self, index):
         wd = self.app.wd
         self.return_home_page()
         element_row = wd.find_elements_by_name("entry")[index]
         element = element_row.find_elements_by_tag_name("td")[7]
         element.find_element_by_tag_name("a").click()
+
+    def open_contact_to_edit_by_id(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_css_selector("a[href='edit.php?id=" + str(id) + "']").click()
 
     def modify_contact(self, contact):
         wd = self.app.wd
