@@ -148,25 +148,9 @@ class ContactHelper:
                 all_email = cells[4].text
                 all_phones = cells[5].text
                 self.contact_cache.append(Contact(id=id, lastname=last_name, firstname=first_name, address=address,
-                                                  all_email_from_home_page=all_email, all_phones_from_home_page=all_phones))
+                                                  all_email_from_home_page=all_email,
+                                                  all_phones_from_home_page=all_phones))
         return list(self.contact_cache)
-
-    # def get_contact_info_from_home_page(self, index):
-    #     if self.contact_cache is None:
-    #         wd = self.app.wd
-    #         self.return_home_page()
-    #         self.contact_cache = []
-    #         for element in wd.find_elements_by_name("entry"):
-    #             cells = element.find_elements_by_tag_name("td")
-    #             id = cells[0].find_element_by_tag_name("input").get_attribute("value")
-    #             last_name = cells[1].text
-    #             first_name = cells[2].text
-    #             address = cells[3].text
-    #             all_email = cells[4].text
-    #             all_phones = cells[5].text
-    #             self.contact_cache.append(Contact(id=id, lastname=last_name, firstname=first_name, address=address,
-    #                                               all_email_from_home_page=all_email, all_phones_from_home_page=all_phones))
-    #     return list(self.contact_cache)
 
     def get_contact_info_from_edit_page(self, index):
         wd = self.app.wd
@@ -196,3 +180,22 @@ class ContactHelper:
         secondaryphone = re.search("P: (.*)", text).group(1)
         return Contact(homephone=homephone, mobilephone=mobilephone,
                        workphone=workphone, secondaryphone=secondaryphone)
+
+    def add_contact_in_group(self, contact_id, group_id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_id(contact_id)
+        wd.find_element_by_xpath("(//option[@value='%s'])[2]" % group_id).click()
+        wd.find_element_by_name("add").click()
+        self.contact_cache = None
+
+    def del_contact_from_group(self, contact_id, group_id):
+        wd = self.app.wd
+        self.open_contact_list_in_group_by_id(group_id)
+        self.select_contact_by_id(contact_id)
+        wd.find_element_by_name("remove").click()
+
+    def open_contact_list_in_group_by_id(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_xpath("//option[@value='%s']" % id).click()
