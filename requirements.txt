@@ -4,5 +4,6 @@ selenium
 jsonpickle
 pony
 pymysql
-mysql-connector-python-rf
+mysql-connector-python
 pytest-allure-adaptor
+lxml-4.5.2-cp36-cp36m-win32.whl
