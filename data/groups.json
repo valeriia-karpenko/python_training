@@ -1,0 +1,16 @@
+[
+  {
+    "py/object": "model.group.Group",
+    "name": "",
+    "header": "",
+    "footer": "",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "nameSj",
+    "header": "header",
+    "footer": "footer ltR5",
+    "id": null
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "NTB-BOZAR",
+    "children" : [ {
+      "name" : "11540-MainThread",
+      "children" : [ {
+        "name" : "test_add_group[None:nameSj;header;footer ltR5]",
+        "uid" : "f6a79e31a2e5d380",
+        "parentUid" : "e59222cb0046bff3239ac8594ab1c6d3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613632740675,
+          "stop" : 1613632741775,
+          "duration" : 1100
+        },
+        "flaky" : true,
+        "parameters" : [ "None:nameSj;header;footer ltR5" ]
+      }, {
+        "name" : "test_add_group[None:;;]",
+        "uid" : "b596fe54b1e1beaa",
+        "parentUid" : "e59222cb0046bff3239ac8594ab1c6d3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613632739295,
+          "stop" : 1613632740629,
+          "duration" : 1334
+        },
+        "flaky" : true,
+        "parameters" : [ "None:;;" ]
+      } ],
+      "uid" : "e59222cb0046bff3239ac8594ab1c6d3"
+    } ],
+    "uid" : "961c8d58abb3ba5925782c80563a6339"
+  } ]
+}

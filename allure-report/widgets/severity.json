@@ -1,0 +1,21 @@
+[ {
+  "uid" : "f6a79e31a2e5d380",
+  "name" : "test_add_group[None:nameSj;header;footer ltR5]",
+  "time" : {
+    "start" : 1613632740675,
+    "stop" : 1613632741775,
+    "duration" : 1100
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b596fe54b1e1beaa",
+  "name" : "test_add_group[None:;;]",
+  "time" : {
+    "start" : 1613632739295,
+    "stop" : 1613632740629,
+    "duration" : 1334
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
