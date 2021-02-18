@@ -1,0 +1,33 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "test.test_add_group",
+    "children" : [ {
+      "name" : "test_add_group[None:;;]",
+      "uid" : "b596fe54b1e1beaa",
+      "parentUid" : "26996eb283b3c62ba5edb3d2d84f74de",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613632739295,
+        "stop" : 1613632740629,
+        "duration" : 1334
+      },
+      "flaky" : true,
+      "parameters" : [ "None:;;" ]
+    }, {
+      "name" : "test_add_group[None:nameSj;header;footer ltR5]",
+      "uid" : "f6a79e31a2e5d380",
+      "parentUid" : "26996eb283b3c62ba5edb3d2d84f74de",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613632740675,
+        "stop" : 1613632741775,
+        "duration" : 1100
+      },
+      "flaky" : true,
+      "parameters" : [ "None:nameSj;header;footer ltR5" ]
+    } ],
+    "uid" : "test.test_add_group"
+  } ]
+}

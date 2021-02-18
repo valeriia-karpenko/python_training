@@ -1,9 +1,8 @@
 pytest
-pytest_bdd
 selenium
 jsonpickle
 pony
 pymysql
-mysql-connector-python
-pytest-allure-adaptor
+mysql-connector-python-rf
+allure-pytest
 lxml-4.5.2-cp36-cp36m-win32.whl
